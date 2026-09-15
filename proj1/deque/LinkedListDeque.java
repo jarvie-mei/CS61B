@@ -192,16 +192,6 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     @Override
-    public boolean contains(T data) {
-        for (int i = 0; i < size; i++) {
-            if (this.get(i).equals(data)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (o instanceof Deque) {
             Deque<T> d = (Deque<T>) o;
@@ -209,8 +199,8 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
                 return false;
             }
 
-            for (T x: this) {
-                if (!d.contains(x)) {
+            for (int i = 0; i < size; i++) {
+                if (!this.get(i).equals(d.get(i))) {
                     return false;
                 }
             }

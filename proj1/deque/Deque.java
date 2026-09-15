@@ -28,8 +28,6 @@ public interface Deque<T> {
      */
     T get(int index);
 
-    boolean contains(T item);
-
     /** Returns true if deque is empty, false otherwise. */
     default boolean isEmpty() {
         return size() == 0;

@@ -124,24 +124,14 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     @Override
-    public boolean contains(T item) {
-        for (int i = 0; i < size; i++) {
-            if (this.get(i).equals(item)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (o instanceof Deque) {
             Deque<T> d = (Deque<T>) o;
             if (d.size() != size) {
                 return false;
             }
-            for (T x:this) {
-                if (!((Deque<T>) o).contains(x)) {
+            for (int i = 0; i < size; i++) {
+                if (!this.get(i).equals(d.get(i))) {
                     return false;
                 }
             }
