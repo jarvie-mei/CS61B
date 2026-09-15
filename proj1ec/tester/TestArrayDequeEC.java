@@ -29,11 +29,17 @@ public class TestArrayDequeEC {
                 solution.addLast(value);
                 message += "addLast" + "(" + value + ")\n";
             } else if (operationNum == 2) {
+                if (solution.isEmpty()) {
+                    continue;
+                }
                 Integer studentResult = student.removeFirst();
                 Integer solutionResult = solution.removeFirst();
                 message += "removeFirst()\n";
                 assertEquals(message, solutionResult, studentResult);
             } else if (operationNum == 3) {
+                if (solution.isEmpty()) {
+                    continue;
+                }
                 Integer studentResult = student.removeLast();
                 Integer solutionResult = solution.removeLast();
                 message += "removeLast()\n";
