@@ -90,7 +90,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     public void printDeque() {
         Node current = sentinel.next;
         while (current != sentinel) {
-            System.out.println(current.data + " ");
+            System.out.print(current.data + " ");
             current = current.next;
         }
         System.out.println();
