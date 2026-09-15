@@ -22,7 +22,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
          * @param p
          * @param n
          */
-        public Node(T d, Node p, Node n) {
+        Node(T d, Node p, Node n) {
             data = d;
             prev = p;
             next = n;
@@ -31,7 +31,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
         /**
          * Constructor for sentinel Node
          */
-        public Node() {
+        Node() {
             prev = this;
             next = this;
         }
@@ -69,7 +69,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
          * which is sentinel.prev; right before the addLast() is done.
          * new Node's next always points to the sentinel Node to form a circular list.
          */
-        sentinel.prev.next = new Node(data, sentinel.prev,sentinel);
+        sentinel.prev.next = new Node(data, sentinel.prev, sentinel);
         /**
          * sentinel's prev points to the new added node now
          */
@@ -159,7 +159,7 @@ public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
      */
     private T getTargetItem(Node curr, int index) {
         if (index == 0) {
-           return curr.data;
+            return curr.data;
         }
         return getTargetItem(curr.next, index - 1);
     }
